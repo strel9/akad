@@ -71,7 +71,7 @@ a {
 }
 
 .breadcrumbs__item {
-  position: relative;
+  position: relative; /*?*/
   font-size: 0.875rem;
   text-transform: uppercase;
 }
@@ -86,14 +86,14 @@ a {
 .ba-info__title {
   display: inline-block;
   font-size: 1.875rem;
-  position: relative;
+  position: relative; /*?чтобы прямоугольник ушел*/
   text-transform: uppercase;
 }
 
 .ba-info__title:before {
   content: "";
   display: inline-block;
-  position: absolute;
+  position: absolute; /*?чтобы прямоугольник ушел*/
   left: -1px;
   top: 10px;
   height: 0.7em;
@@ -102,7 +102,7 @@ a {
 }
 
 .ba-info__title span {
-  position: relative;
+  position: relative; /*?чтобы прямоугольник ушел*/
 }
 
 .ba-info-block__fact {
@@ -118,7 +118,7 @@ a {
   letter-spacing: 0;
 }
 
-.ba-info__text p,
+.ba-info__text p, /*?*/
 .ba-info__text ul,
 .ba-info__text ol {
   margin-top: 0;
@@ -158,7 +158,7 @@ a {
   width: 100%;
   height: 333px;
   overflow: hidden; /*?*/
-  position: relative;
+  position: relative; /*?*/
   margin-bottom: 30px;
 }
 
@@ -170,7 +170,7 @@ a {
 }
 
 .ba-team-member__info {
-  position: absolute;
+  position: absolute; /*?*/
   left: 0;
   top: 0;
   width: 100%;
@@ -181,10 +181,10 @@ a {
   text-align: center;
   height: 100%;
   background-color: #7beec85c;
-  transform: translateY(-100%);
-  transition: transform .4s; /*transform?*/
+  transform: translateY(-100%); /*?*/
+  transition: transform 0.4s;
 }
 
-.ba-team-member:hover .ba-team-member__info{
-  transform: translateY(0);
+.ba-team-member:hover .ba-team-member__info { /*?*/
+  transform: translateY(0); /*?*/
 }
