@@ -28,11 +28,27 @@
         </h1>
 
 
-        <button class="ba-menu-btn" aria-label="open-menu">
+        <label for="menuOpen" class="ba-menu-btn" aria-label="open-menu">
           <span class="ba-menu-btn__line"></span>
           <span class="ba-menu-btn__line"></span>
           <span class="ba-menu-btn__line"></span>
-        </button>
+        </label>
+
+        <input type="checkbox" id="menuOpen" class="visually-hidden">
+
+        <div class="ba-menu-block">
+          <nav>
+            <ul class="ba-menu">
+              <li class="ba-menu__item"><a href="" class="ba-menu__link">menu 01</a></li>
+              <li class="ba-menu__item"><a href="" class="ba-menu__link">menu 02</a></li>
+              <li class="ba-menu__item"><a href="" class="ba-menu__link">menu 03</a></li>
+              <li class="ba-menu__item"><a href="" class="ba-menu__link">menu 04</a></li>
+              <li class="ba-menu__item"><a href="" class="ba-menu__link">menu 05</a></li>
+            </ul>
+          </nav>
+          
+        </div>
+
       </div>
 
     </div>
@@ -361,12 +377,36 @@
       </div>
     </section>
     <!-- ba-team end -->
-    <br>
 
   </main>
   <footer class="ba-footer">
     <div class="container">
-      <div class="row"></div>
+      <div class="ba-row">
+        <div class="ba-col-6">
+          <div class="ba-footer-contact">
+            <h2 class="ba-footer__title">
+              YOU THINK WE'RE COOL ? LET'S WORK TOGETHER
+            </h2>
+            <button id="modalGeInTouch" class="ba-button">get in touch</button>
+          </div>
+        </div>
+        <div class="ba-col-6">
+          <div class="ba-subscribe">
+            <h2 class="ba-subscribe__title">STAY INFORMED WITH OUR NEWESLETTER</h2>
+            <p class="ba-subscribe__desc ba-info__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Reprehenderit,
+              accusantium?
+
+            </p>
+            <form action="" class="ba-subscribe-form">
+              <input type="email" required placeholder="you email" class="ba-input" pattern="[A-Za-z]{3}"
+                title="Three letter country code">
+              <button class="ba-button ba-button_green">sent</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 </body>
