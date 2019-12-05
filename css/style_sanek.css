@@ -1,18 +1,17 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
+body{
+  font-family: 'Montserrat', sans-serif;
+  /* background-color: #60606e; */
   color: #60606e;
 }
 
-ul {
+*{
+box-sizing: border-box;
+}
+ul{
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 a {
   color: inherit;
   text-decoration: none;
@@ -24,77 +23,82 @@ a {
   top: 0;
   width: 100%;
   padding-top: 40px;
-}
+ }
 
 .ba-header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .ba-menu-btn {
-  height: 15px;
   width: 30px;
+  height: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: transparent;
   border: none;
-  /* background-color: transparent; */
+  -webkit-appearance: none;
   cursor: pointer;
   z-index: 10;
+}
 
-  -webkit-appearance: none;
-}
 .ba-menu-btn__line {
+  width: 30px;
   display: block;
-  /* width: 100%; */
-  height: 1px;
-  background-color: #60606e;
+  /* width: 100%;   */
+ height: 1px;
+ background-color: #60606e;
 }
+
 .ba-menu-btn__line:nth-child(2) {
-  width: 50%;
+width: 50%;
 }
 
 .ba-menu-btn__line:nth-child(3) {
-  width: 23px;
-}
+  width: 23xp;
+  }
 
 .ba-menu-block {
   position: fixed;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   left: 0;
-  top: -100%;
+  top: -103%;
   width: 100%;
   height: 100vh;
-  background-color:#b0b0b0;
-
+  /* background-color: tomato; */
+  background-color: #c1c1c1;
   background-image: url(../img/herojpg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-
   transform: translateY(0);
-  transition: 0.4s;
-  z-index: 5;
+  transition: transform .4s;
+  z-index: 5; /* если убрать з индекс, то вілезут єлементы с позишион которые ниже в ХТМЛ- такое правило, что ниже в хтмл, выше отображется */
 }
+
 
 /* Выпадащее меню */
 #menuOpen:checked ~ .ba-menu-block {
   transform: translateY(100%);
 }
 
+/* конец выпадабщего меню */
+
 .ba-menu {
-  display: flex;
-  /* justify-content: space-between; */
+display: flex;
 }
 
 .ba-menu__link {
-  font-size: 1.5em;
-  color: #fff;
+  font-size: 1.5 em;
+  color:rgb(68, 26, 26);
   padding: 0 1em;
 }
+
 /* Animation menu */
-.ba-menu__item{
+.ba-menu__item {
   opacity: 0;
   transform: translateY(-1.25em) scale(1.25);
   transition: transform .5s ease, opacity .2s;
@@ -129,18 +133,20 @@ a {
   padding-top: 120px;
   padding-bottom: 100px;
 }
+
 .ba-hero {
   background-color: #c1c1c1;
-  background-image: url(../img/hero.jpg);
+  background-image: url(../img/herojpg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 500px;
+  padding-top: 70px;
+  padding-bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 70px;
-  /* padding-bottom: 0; */
 }
+
 .ba-hero-wrapper {
   text-align: center;
 }
@@ -156,11 +162,13 @@ a {
   text-decoration: none;
 }
 
+
+
 .ba-hero__title {
-  font-size: 2.25rem; /* 36/16 */
-  margin-bottom: 0.555rem; /* 20/36 */
-  line-height: 1;
-  text-transform: uppercase;
+font-size: 2.25rem;
+margin-bottom: .555em;
+line-height: 1;
+text-transform: uppercase;
 }
 
 .ba-breadcrumbs {
@@ -168,61 +176,65 @@ a {
   justify-content: center;
 }
 
-.breadcrumbs__item {
-  position: relative; /*?*/
-  font-size: 0.875rem;
+.ba-breadcrumbs_item{
+  position: relative;
+  font-size: .875rem;
   text-transform: uppercase;
 }
 
-.breadcrumbs__item + .breadcrumbs__item:before {
-  content: "/";
-  display: inline-block;
-  /* margin: 0 0 0 5px; */
-  margin: 0 5px;
+/* создаем косую черту для всех єлементов кроме первого  */
+.ba-breadcrumbs_item + .ba-breadcrumbs_item::before { 
+  content: '/';
+  display: inline-block; /* делаем как блок, чтобы добавить пиксели как пробелы */
+  margin: 0 0 0 5px; /* это пробелы, размер 5пкс взяли с шаблона*/
+
 }
+/* сделали */
 
 .ba-info__title {
   display: inline-block;
-  font-size: 1.875rem;
-  position: relative; /*?чтобы прямоугольник ушел*/
-  text-transform: uppercase;
-  letter-spacing: -0.05em;
+font-size: 1.875rem; 
+position: relative; 
+text-transform: uppercase;
+letter-spacing: -.05em;
 }
-
+/* создаем подчеркивание минт в заголовке */
 .ba-info__title:before {
-  content: "";
+  content: '';
   display: inline-block;
-  position: absolute; /*?чтобы прямоугольник ушел*/
+  position: absolute;
   left: -1px;
   top: 1rem;
-  height: 0.7em;
+  bottom: 0;
+  height: .7em;
   width: 2.26em;
   background-color: #7beec7;
 }
 
+/* без этого блок будет перекрывать заголовок*/
 .ba-info__title span {
-  position: relative; /*?чтобы прямоугольник ушел*/
+  position: relative;
 }
+/* сделали */
 
 .ba-info-block__fact {
   display: block;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-}
+text-transform: uppercase;
+font-size: 0.875rem;
+} 
 
 .ba-info__text {
   font-size: 0.875rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: 2.14285;
   letter-spacing: 0;
 }
 
-.ba-info__text p, /*?*/
+.ba-info__text p,
 .ba-info__text ul,
 .ba-info__text ol {
-  margin-top: 0;
+margin-top: 0;
 }
-
 
 
 .ba-section__header {
@@ -239,141 +251,158 @@ a {
 }
 
 .ba-benefit__icon {
-  width: 40px;
-  height: 40px;
-  background-color: #7beec7;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 1.05em;
-  color: #fff;
-  font-size: 30px;
+width: 40px;
+height: 40px;
+background-color: #7beec7;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+margin-right: 1.05em;
+color: #fff;
+font-size: 30px;
 }
 
-/* ba-team-member */
+/* ba-team member */
 .ba-team-member {
   width: 100%;
   height: 333px;
-  overflow: hidden; /*?*/
-  position: relative; /*?*/
+  overflow: hidden;
+  position: relative;
   margin-bottom: 30px;
-  color: #fff;
-  text-shadow: #000 2px 1px 12px;
+  transform: rotate(360deg);
+  transition: transform .9s;  
+  color: white;
+  text-shadow: #000 2px 1px 12px ; /* шрифты наследуются, делаем для контрастности выпадающей таблички*/
 }
-.ba-team-member .icon {
+
+.ba-team-member .icon{
   font-size: 4em;
 }
-.ba-team-member__name {
+
+.ba-team-member_name{
   margin: 0;
   font-size: 2em;
 }
+
 
 .ba-team-member__img {
   display: block;
   width: 100%;
   height: 100%;
-  min-width: 100%;
+  max-width: 100%;
 }
 
 .ba-team-member__info {
-  position: absolute; /*?*/
+  position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   height: 100%;
   background-color: #7beec85c;
-  transform: translateY(-100%); /*?*/
-  transition: transform 0.4s;
+  transform: translateY(-100%); /* подняли вісплівающее окно вверх*/
+ transition: transform .4s;  
 }
 
-.ba-team-member:hover .ba-team-member__info {
-  /*?*/
-  transform: translateY(0); /*?*/
+.ba-team-member:hover .ba-team-member__info
+{
+  transform: translateY(0); /* спускается полупрозрачное окошко с инфой при наведении*/
 }
 
-.ba-footer {
-  background-color: #7beec7;
-  padding: 50px 0;
+.ba-footer{
+background-color: #7beec7;
+padding: 50px 0;
 }
-.ba-footer__title {
-  color: #fff;
+
+.ba-foter__title {
+  color: white;
   font-size: 1.875rem;
 }
 
-.ba-subscribe {
+.ba-subscribe{
   background-color: #fff;
   padding: 18px 21px;
+ 
 }
-.ba-subscribe__title {
-  font-size: 1.5em;
-  color: #000;
+
+.ba-subscribe__title{
+  font-size: 1.5rem;
+  color: black;
 }
+
 
 .ba-button {
   display: inline-block;
-  height: 50px;
-  line-height: 50px;
-  border: 2px solid transparent;
-  background-color: #fff;
-  color: #7beec7;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: bold;
-  font-size: 0.875rem;
-  padding: 0 2em;
-  transition: 0.4s;
+height: 50px;
+line-height: 50px;
+border: 2px solid transparent;
+background-color: #ffffff;
+color:  #7beec7;
+text-transform: uppercase;
+text-align: center;
+font-weight: bold;
+font-size: 0.875rem;
+padding: 0 2em;
+transition: .4s;
 }
+
 .ba-button:hover {
   opacity: 0.8;
 }
-.ba-button:focus {
+
+.ba-button:focus{
   border-color: #18c0e6;
 }
-.ba-button:active {
-  border-color: #18c0e3;
+
+.ba-button:active{
+  border-color: #18c0e6;
 }
+
 .ba-button_green {
   background-color: #7beec7;
-  color: #fff;
+  color: white;
 }
-.ba-subscribe-form {
+
+.ba-subscribe__form {
   display: flex;
+
 }
+
 .ba-input {
   height: 50px;
   padding: 1em;
   border: 1px solid #c1c1c1;
   border-right: none;
   flex-grow: 1;
-  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
 }
+
 .ba-input:focus {
   outline: none;
   box-shadow: inset 6px 0px 0px 0px #7beec7;
 }
 
-::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  color: #cdcdcd;
+/* input placeholder color and size text*/
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #cdcdcdcd;
   text-transform: uppercase;
 }
-::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #cdcdcd;
+::-moz-placeholder { /* Firefox 19+ */
+  color: #cdcdcdcd;
   text-transform: uppercase;
 }
-:-ms-input-placeholder {
-  /* IE 10+ */
-  color: #cdcdcd;
+:-ms-input-placeholder { /* IE 10+ */
+  color: #cdcdcdcd;
   text-transform: uppercase;
 }
-:-moz-placeholder {
-  /* Firefox 18- */
-  color: #cdcdcd;
+:-moz-placeholder { /* Firefox 18- */
+  color: #cdcdcdcd;
   text-transform: uppercase;
 }
+
+/* input placeholder transoft end*/
